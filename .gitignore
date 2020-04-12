@@ -1,3 +1,5 @@
+#OSX_Sucks
+.DS_Store
 #Arduino
 *.hex
 # Intellij
