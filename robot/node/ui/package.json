@@ -9,13 +9,15 @@
   "author": "Jackie Gleason",
   "license": "MIT",
   "dependencies": {
-    "@jrg/koa-sass": "0.0.5",
-    "@material/mwc-top-app-bar": "^0.14.1",
-    "koa": "^2.11.0",
-    "koa-body": "^4.1.1",
-    "koa-mount": "^4.0.0",
-    "koa-pug": "^4.0.3",
-    "koa-router": "^8.0.8",
-    "koa-static": "^5.0.0"
+    "@jrg/koa-sass": "latest",
+    "@jrg/ubuntu-ui": "latest",
+    "@material/mwc-button": "latest",
+    "@material/mwc-top-app-bar": "latest",
+    "koa": "latest",
+    "koa-body": "latest",
+    "koa-mount": "latest",
+    "koa-pug": "latest",
+    "koa-router": "latest",
+    "koa-static": "latest"
   }
 }

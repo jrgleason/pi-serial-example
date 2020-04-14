@@ -19,4 +19,14 @@ export class Movement extends SubRoute {
         ctx.response.status = 500;
     }
   }
+  async onForwardGet(ctx) {
+    try{
+        const stdOut = execSync("python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/backward.py")
+        ctx.body = stdOut.toString('utf-8');
+    } catch(err){
+        // TODO: Remove error message
+        ctx.body = `There was an internal service error ${err}`;
+        ctx.response.status = 500;
+    }
+  }
 }

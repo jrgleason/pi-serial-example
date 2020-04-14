@@ -1,7 +1,11 @@
-$mdc-theme-primary: #fcb8ab;
+$mdc-theme-primary: green;
 @import "@material/top-app-bar/mdc-top-app-bar.scss";
+@import "@material/button/mdc-button.scss";
 html, body{
     height: 100%;
     width: 100%;
     margin: 0;
+}
+.mdc-top-app-bar{
+    position: initial;
 }

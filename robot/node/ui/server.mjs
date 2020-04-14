@@ -26,10 +26,27 @@ const sass = new KoaSass({
 stylesApp.use(sass.koaMiddleware);
 stylesApp.use(serve('styles'));
 
+const setStaticHeaders = (res) => {
+    res.setHeader('content-type', 'application/javascript')
+}
+
+const staticOptions = {
+    setHeaders: setStaticHeaders
+}
+
 // app.use(mount('/ui', serve('./node_modules/@jrg/ubuntu-ui/dist')));
 app.use(mount('/', main.app))
     .use(mount('/movement', movement.app))
     .use(mount('/styles', stylesApp))
+    .use(mount('/js', serve(`${__dirname}/global/scripts`, staticOptions)))
+    .use(
+        mount(
+            '/jrg',
+            serve(
+                `${__dirname}/node_modules/@jrg`, staticOptions
+            )
+        )
+    )
     .use(mount('/material', serve(`${__dirname}/node_modules/@material`)))
     .listen(3001, ()=>{
       console.log(`The server is running`);
