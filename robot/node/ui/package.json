@@ -1,0 +1,21 @@
+{
+  "name": "@jrg-robot/ui",
+  "version": "0.0.1",
+  "description": "Simple UI for the robot",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jackie Gleason",
+  "license": "MIT",
+  "dependencies": {
+    "@jrg/koa-sass": "0.0.5",
+    "@material/mwc-top-app-bar": "^0.14.1",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-mount": "^4.0.0",
+    "koa-pug": "^4.0.3",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0"
+  }
+}

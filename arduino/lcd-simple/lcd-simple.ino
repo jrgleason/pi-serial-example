@@ -252,13 +252,14 @@ void LCD_Clear(unsigned int j)
 //      Lcd_Write_Data(j);
 //
 //    }
-    Lcd_Write_Data(j>>8);
-    Lcd_Write_Data(j);
+  Lcd_Write_Data(j>>8);
+  Lcd_Write_Data(j);
   digitalWrite(LCD_CS,HIGH);   
 }
 
 void setup()
 {
+  Serial.begin(115200);
   for(int p=0;p<10;p++)
   {
     pinMode(p,OUTPUT);
@@ -279,14 +280,32 @@ void setup()
 
 void loop()
 {  
+//  while true
+//    Serial.println("Hello world from Ardunio!");
+//    delay(1000);
+//    if(Serial.available() > 0) {
+//      Serial.println("Hello world from Ardunio!");
+//      char data = Serial.read();
+//      char str[2];
+//      str[0] = data;
+//      str[1] = '\0';
+//      Serial.print(str);
+//    }
+  // Serial.println("Hello world from Ardunio!"); // write a string
+  // delay(1000);
    // LCD_Clear(0xf800);
-   // LCD_Clear(0x07E0);
-    LCD_Clear(0x001F);
-  /*   
-  for(int i=0;i<1000;i++)
-  {
-    Rect(random(300),random(300),random(300),random(300),random(65535)); // rectangle at x, y, with, hight, color
-  }*/
+   LCD_Clear(0x07E0);
+  //  LCD_Clear(0x001F);
   
 //  LCD_Clear(0xf800);
+//  while(true){
+  if(Serial.available() > 0){
+    Serial.println("Hello world from Ardunio!");
+//    char data = Serial.read();
+//    char str[2];
+//    str[0] = data;
+//    str[1] = '\0';
+//    Serial.print(str);
+    delay(10000);
+  }
 }
