@@ -1,3 +1,5 @@
+#Ignore native build files
+build
 #OSX_Sucks
 .DS_Store
 #Arduino
