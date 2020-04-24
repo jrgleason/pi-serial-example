@@ -17,6 +17,8 @@ export class Main extends SubRoute {
     this.setRoute('get', '/', this.onIndexGet.bind(this));
   }
   async onIndexGet(ctx) {
-      ctx.body = await pug.render('index', { }, true);
+      ctx.body = await pug.render('index', {
+        name: process.env.ROBOT_NAME || "Your Robot"
+      }, true);
   }
 }

@@ -9,3 +9,16 @@ html, body{
 .mdc-top-app-bar{
     position: initial;
 }
+.content{
+    display: flex;
+    .left-side,.middle-column,.right-side{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: middle;
+        align-items: center;
+        *{
+            flex:1;
+        }
+    }
+}

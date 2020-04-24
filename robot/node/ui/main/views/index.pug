@@ -12,14 +12,34 @@ html
             .mdc-top-app-bar__row
                 section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
                     // button.material-icons.mdc-top-app-bar__navigation-icon.mdc-icon-button menu
-                    span.mdc-top-app-bar__title Hi, I am Your Robot!
+                    span.mdc-top-app-bar__title Hi, I am #{name}!
         jrg-viewport(name='Jackie R Gleason', id='viewport')
             .content(slot="jrg-view-item")
-                button.mdc-button#forward
-                    .mdc-button__ripple
-                    span.mdc-button__label Forward
-                button.mdc-button#backward
-                    .mdc-button__ripple
-                    span.mdc-button__label backward
+                .left-side
+                    .top &nbsp;
+                    .middle
+                        button.mdc-button#backward
+                            .mdc-button__ripple
+                            span.mdc-button__label left
+                    .botom &nbsp;
+                .middle-column
+                    .top
+                        button.mdc-button#forward
+                            .mdc-button__ripple
+                            span.mdc-button__label Forward
+                    .middle &nbsp;
+                    .bottom
+                        button.mdc-button#backward
+                            .mdc-button__ripple
+                            span.mdc-button__label backward
+                .right-side
+                    .top &nbsp;
+                    .middle
+                        button.mdc-button#backward
+                            .mdc-button__ripple
+                            span.mdc-button__label right
+                    .bottom &nbsp;
+
+
         script(type="module" src='/jrg/ubuntu-ui/dist/index.umd.js')
         script(type="module" src="/js/global.mjs")

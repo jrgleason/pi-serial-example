@@ -3,16 +3,14 @@
   "version": "0.0.1",
   "description": "Simple UI for the robot",
   "main": "server.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Jackie Gleason",
   "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules server.mjs"
+  },
   "dependencies": {
     "@jrg/koa-sass": "latest",
     "@jrg/ubuntu-ui": "latest",
-    "@material/mwc-button": "latest",
-    "@material/mwc-top-app-bar": "latest",
     "koa": "latest",
     "koa-body": "latest",
     "koa-mount": "latest",

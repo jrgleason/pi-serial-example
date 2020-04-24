@@ -2,6 +2,8 @@
 
 This project was created to house the raspberry pi work I am doing.
 
+[Getting Started](./docs/GETTING_STARTED.md)
+
 # Robot
 
 This includes Python code that I am currently using to control parts of the robot. It will evenetually include the UI for the robot.
