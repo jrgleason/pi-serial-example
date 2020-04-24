@@ -95,7 +95,7 @@ First let's look at the pins...
 
 ![L293D](https://components101.com/sites/default/files/component_pin/L293D-Pinout.png)
   
-  * ###Left Side       
+  * ### Left Side       
     * **Enable 1,2**: Turns on the motor that is wired into input 1 and 2.
     * **Input 1** Used to set motor 1/2 to forward
     * **Output 1** Connected to the Motor
@@ -104,7 +104,7 @@ First let's look at the pins...
     * **Output 2** Connected to the Motor
     * **Input 2** Used to set motor 1/2 to Backward
     * **Vcc2** Power from battery pack
-  * ###Right Side       
+  * ### Right Side       
     * **Vcc1** Power from Raspberry Pi 
     * **Input 3** Used to set motor 3/4 to forward
     * **Output 3** Connected to the Motor
