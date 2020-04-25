@@ -7,21 +7,22 @@
   "license": "MIT",
   "scripts": {
     "start": "node --experimental-modules server.mjs",
-    "install": "cmake-js compile"
+    "install": "cmake-js --log-level verbose compile"
   },
   "dependencies": {
     "@jrg/koa-sass": "latest",
     "@jrg/ubuntu-ui": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
-    "bindings": "^1.5.0",
+    "bindings": "latest",
     "koa": "latest",
     "koa-body": "latest",
     "koa-mount": "latest",
     "koa-pug": "latest",
     "koa-router": "latest",
     "koa-static": "latest",
-    "rpio": "^2.1.1"
+    "acorn": "latest",
+    "rpio": "latest"
   },
   "devDependencies": {
     "cmake-js": "^6.1.0",
