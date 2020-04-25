@@ -26,10 +26,6 @@ Support local businesses! Links are to [Microcenter](https://www.microcenter.com
 * [Various Sensors][sensors-buy]
 * [Hard Jumper wires][hard-wire-buy]
 
-## Tools
-* Soldering Iron
-* Screw Driver (Phillips)
-
 [raspberry-pi-buy]: https://www.microcenter.com/product/473292/raspberry-pi-2-model-b
 [jumper-cables-buy]: https://todo.com
 [breadboard-buy]: https://www.microcenter.com/product/613877/inland-400-tie-points-breadboard---3-pack
@@ -83,7 +79,35 @@ If the motors run you are ready for the next step.
     1. I would recommend setting up a static IP for the bot on the network. This enables communication and prevents the need to update IP everytime the device is booted.
 1. **TODO**: Generate SSH key for device and SCP the key to the Raspberry Pi
 1. **TODO**: Test SSH Connection from computer
-1. **TODO**: Install GPIOZero
+
+## GPIO
+
+In basic device programs there are a few main types of serial communication, the most basic is GPIO or General Purpose Input/Output. This is a great place to get started so that is what we will use in this blog.
+
+## GPIO on Raspberry Pi 
+
+Assuming you are using a Raspberry 2,3, or 4 you should see a pin set on the side. Here is an example...
+
+![Raspberry pi GPIO](https://www.raspberrypi.org/documentation/usage/gpio/images/GPIO-Pinout-Diagram-2.png)
+
+You will notice some ports say 5v power, some ports say ground but the majority of the ports are labeled GPIO. You will also notice other acronyms like SDA, and SCL; these are for certain other "types" of [serial ports](https://www.robot-electronics.co.uk/i2c-tutorial).
+
+We will need 4 pins (6 if you want to use the engage as well), so we will be using 27, 22, 23, 24.
+
+## Round #1 Python
+
+GPIO ports, as their name implies, have two basic functions: reading and writing. To do these two things we will need to interact with their representation in our operating system (in this case Raspbian). To do this we will by using a common scripting language called Python. We will, eventually use a more native language named simply C. However, that is a bit much for now. To test that we have Python properly installed run `python3` this should start Python. At the python command line type `quit()` to close the application
+
+### TODO: If Python is not installed 
+
+### TODO: Eventually this will be replaced to use 
+### Add RPiGPIO to RobotBrain
+
+RPiGPIO is a simple python library that will let us interact with the GPIO ports.
+
+**TODO**: Install RPiGPIO
+
+# Robot v1 Motors
 
 ## Wiring The L293D
 
@@ -92,6 +116,8 @@ Intro about why we want a controller instead of directly
 ### How does the L293D work?
 
 First let's look at the pins... 
+
+**TODO** how to find the top
 
 ![L293D](https://components101.com/sites/default/files/component_pin/L293D-Pinout.png)
   
@@ -114,3 +140,6 @@ First let's look at the pins...
     * **Input 2** Used to set motor 1/2 to Backward
     * **Enable 3,4**: Turns on the motor that is wired into input 3 and 4.
        
+So here is a sample diagram 
+
+![Motor Robot](./imgs/state2bb.png)       
