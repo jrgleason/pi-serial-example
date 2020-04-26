@@ -50,5 +50,5 @@ napi_value stop(napi_env env, napi_callback_info args){
 napi_value led(int red, int green, int blue){
     // TODO
     char arr[1];
-    return sprintf(s,"%ld", 1);;
+    return sprintf(arr,"%ld", 1);;
 }
