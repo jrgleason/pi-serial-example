@@ -2,7 +2,7 @@
 #include <node_api.h>
 #include <stdio.h>
 #include "robot.h"
-#include 'node_common.h'
+#include "node_common.h"
 
 napi_value init(napi_env env, napi_value exports) {
   napi_status status;
