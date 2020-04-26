@@ -11,7 +11,7 @@ napi_value forward(napi_env env, napi_callback_info args){
     gpioWrite(OUTPUT_4_GPIO, 1);
     return 0;
 }
-int backward(){
+napi_value backward(napi_env env, napi_callback_info args){
     gpioWrite(ENABLE_1_2, 1);
     gpioWrite(ENABLE_3_4, 1);
     gpioWrite(OUTPUT_1_GPIO, 0);
@@ -20,7 +20,7 @@ int backward(){
     gpioWrite(OUTPUT_4_GPIO, 0);
     return 0;
 }
-int left(){
+napi_value left(napi_env env, napi_callback_info args){
     gpioWrite(ENABLE_1_2, 1);
     gpioWrite(ENABLE_3_4, 1);
     gpioWrite(OUTPUT_1_GPIO, 1);
@@ -29,7 +29,7 @@ int left(){
     gpioWrite(OUTPUT_4_GPIO, 0);
     return 0;
 }
-int right(){
+napi_value right(napi_env env, napi_callback_info args){
     gpioWrite(ENABLE_1_2, 1);
     gpioWrite(ENABLE_3_4, 1);
     gpioWrite(OUTPUT_1_GPIO, 0);
@@ -38,7 +38,7 @@ int right(){
     gpioWrite(OUTPUT_4_GPIO, 1);
     return 0;
 }
-int stop(){
+napi_value stop(napi_env env, napi_callback_info args){
     gpioWrite(ENABLE_1_2, 0);
     gpioWrite(ENABLE_3_4, 0);
     gpioWrite(OUTPUT_1_GPIO, 0);
@@ -47,7 +47,7 @@ int stop(){
     gpioWrite(OUTPUT_4_GPIO, 0);
     return 0;
 }
-int led(int red, int green, int blue){
+napi_value led(int red, int green, int blue){
     // TODO
     return 1;
 }

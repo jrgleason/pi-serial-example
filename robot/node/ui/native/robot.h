@@ -17,9 +17,9 @@ static const int ENABLE_AVOIDANCE_SENSOR = 21;
 static const int AVOIDANCE_SENSOR_OUTPUT = 20;
 // Done Constants
 napi_value forward(napi_env env, napi_callback_info args);
-//int backward();
-//int left();
-//int right();
-//int stop();
-//int led(int red, int green, int blue);
+napi_value backward(napi_env env, napi_callback_info args);
+napi_value left(napi_env env, napi_callback_info args);
+napi_value right(napi_env env, napi_callback_info args);
+napi_value stop(napi_env env, napi_callback_info args);
+//napi_value led(int red, int green, int blue);
 #endif
