@@ -47,7 +47,7 @@ int stop(){
     gpioWrite(OUTPUT_4_GPIO, 0);
     return 0;
 }
-int led(int, int, int){
-    # TODO
+int led(int red, int green, int blue){
+    // TODO
     return 1;
 }
