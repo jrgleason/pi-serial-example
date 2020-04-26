@@ -6,7 +6,7 @@
   "author": "Jackie Gleason",
   "license": "MIT",
   "scripts": {
-    "start": "node --experimental-modules server.mjs",
+    "start": "node --experimental-modules --napi-modules server.mjs",
     "install": "cmake-js --log-level verbose compile"
   },
   "dependencies": {
