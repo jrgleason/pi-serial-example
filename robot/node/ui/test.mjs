@@ -1,6 +1,6 @@
 import Bind from 'bindings';
 
-const bindings = Bind("./build/Release/robot-ui.node");
+const bindings = Bind("robot-ui.node");
 
 const result = bindings.hello();
 
