@@ -1,3 +1,5 @@
+# Removing not sure it is needed
+package-lock.json
 #Ignore native build files
 build
 #OSX_Sucks

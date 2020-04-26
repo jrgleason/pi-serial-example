@@ -4,14 +4,20 @@ This project was created to house the raspberry pi work I am doing.
 
 [Getting Started](./docs/GETTING_STARTED.md)
 
-# Robot
+# [Robot](./robot)
 
-This includes Python code that I am currently using to control parts of the robot. It will evenetually include the UI for the robot.
+## [Node](./robot/node)
 
-# Arduino
+This is the folder for that main applications.
 
-For the robot's "face" I am using the Arduino and a TFT LCD. I will be communicating to the LCD to tell it what to show via the USB serial port on the device. 
+### [UI](./robot/node/ui)
 
-# Commands
+This is the main project. It is a NodeJS project that creates a web server using Koa. The Native portions (N-API), use [bindings](https://github.com/TooTallNate/node-bindings), and [cmakejs](https://github.com/cmake-js/cmake-js).
 
-    sudo avrdude -p m128 -carduino -e -U flash:w:test2.hex -P/dev/ttyACM0
+### [Serial](./robot/node/serial)
+
+This project is being used to communicate with the serial port of an Arduino using USB serial communication.
+
+## [Python](./robot/python)
+
+This is a number of scripts that can be used for simple GPIO testing. This is deprecated and will eventually be remove, however, for now it is included for testing.

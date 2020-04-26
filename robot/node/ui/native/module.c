@@ -1,29 +1,26 @@
 #define NAPI_EXPERIMENTAL
 #include <node_api.h>
+#include <pigpio.h>
 #include <stdio.h>
+#include "robot_node.h"
 #include "robot.h"
 #include "node_common.h"
 
 napi_value init(napi_env env, napi_value exports) {
-  napi_status status;
-  napi_value fn;
-  napi_property_descriptor desc = DECLARE_NAPI_PROPERTY("hello", helloWorld);
-  status = napi_define_properties(env, exports, 1, &desc);
-  if (status != napi_ok) return NULL;
-//  NAPI_CALL(env, napi_define_properties(env, exports, 1, &desc));
-  // 'Export' the 'left' function.
-//  status = napi_create_function(env, NULL, 0, left, NULL, &fn);
-//  if (status != napi_ok) return NULL;
-//  // 'Export' the 'right' function.
-//  status = napi_create_function(env, NULL, 0, right, NULL, &fn);
-//  if (status != napi_ok) return NULL;
-//  // 'Export' the 'up' function.
-//  status = napi_create_function(env, NULL, 0, forward, NULL, &fn);
-//  if (status != napi_ok) return NULL;
-//  // 'Export' the 'down' function.
-//  status = napi_create_function(env, NULL, 0, backward, NULL, &fn);
-//  if (status != napi_ok) return NULL;
-  return exports;
+    napi_status status;
+    napi_value fn;
+    if (initialize() < 0) return NULL;
+    napi_property_descriptor commands[] = {
+        DECLARE_NAPI_PROPERTY("hello", helloWorld),
+        DECLARE_NAPI_PROPERTY("forward", node_forward),
+        DECLARE_NAPI_PROPERTY("backward", node_backward),
+        DECLARE_NAPI_PROPERTY("left", node_left),
+        DECLARE_NAPI_PROPERTY("right", node_right),
+        DECLARE_NAPI_PROPERTY("stop", node_stop)
+    };
+    status = napi_define_properties(env, exports, 6, commands);
+    if (status != napi_ok) return NULL;
+    return exports;
 }
 
 NAPI_MODULE(NODE_GYP_MODULE_NAME, init)

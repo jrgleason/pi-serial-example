@@ -1,6 +1,5 @@
 #ifndef _ROBOT
 #define _ROBOT
-#include <js_native_api.h>
 // These are the motors
 static const int ENABLE_1_2 = 4;
 static const int ENABLE_3_4 = 0;
@@ -16,11 +15,10 @@ static const int BLUE_LED_1=0;
 static const int ENABLE_AVOIDANCE_SENSOR = 21;
 static const int AVOIDANCE_SENSOR_OUTPUT = 20;
 // Done Constants
-//napi_value forward(napi_env env, napi_callback_info args);
-//napi_value backward(napi_env env, napi_callback_info args);
-//napi_value left(napi_env env, napi_callback_info args);
-//napi_value right(napi_env env, napi_callback_info args);
-//napi_value stop(napi_env env, napi_callback_info args);
-//napi_value led(int red, int green, int blue);
-napi_value helloWorld(napi_env env, napi_callback_info info);
+int forward();
+int backward();
+int left();
+int right();
+int stop();
+int initialize();
 #endif

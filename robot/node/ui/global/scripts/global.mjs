@@ -38,3 +38,14 @@ right.addEventListener("click", () => {
     oReq.open("GET", "/movement/right");
     oReq.send();
 });
+
+const stop = document.getElementById("stop");
+stop.addEventListener("click", () => {
+    function reqListener () {
+      console.log(this.responseText);
+    }
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "/movement/stop");
+    oReq.send();
+});

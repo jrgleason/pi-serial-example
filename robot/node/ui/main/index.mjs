@@ -1,7 +1,7 @@
 import Pug from 'koa-pug';
 import path from 'path';
 
-import { SubRoute } from '../SubRoute.mjs';
+import { SubRoute } from '../util/SubRoute.mjs';
 import { __dirname } from '../unclean.mjs';
 
 const viewPath = path.resolve(__dirname, './main/views');
