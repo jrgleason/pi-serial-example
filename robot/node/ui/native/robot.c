@@ -15,6 +15,7 @@
 
 napi_value helloWorld(napi_env env, napi_callback_info info) {
   napi_value world;
+  napi_status status;
   const char* str = "world";
   size_t str_len = strlen(str);
   status = napi_create_string_utf8(env, str, str_len, &world);
