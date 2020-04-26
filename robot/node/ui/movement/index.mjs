@@ -25,22 +25,26 @@ export class Movement extends SubRoute {
   }
   async onForwardGet(ctx) {
     this.execute(
-        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/forward.py"
+        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/forward.py",
+        ctx
     )
   }
   async onBackwardGet(ctx) {
     this.execute(
-        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/backward.py"
+        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/backward.py",
+        ctx
     )
   }
   async onRightGet(ctx) {
     this.execute(
-        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/right.py"
+        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/right.py",
+        ctx
     )
   }
   async onLeftGet(ctx) {
     this.execute(
-        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/left.py"
+        "python3 /home/jgleason/Code/pi-serial-example/robot/python/robot-hack/left.py",
+        ctx
     )
   }
 }

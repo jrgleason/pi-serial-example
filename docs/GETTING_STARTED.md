@@ -115,9 +115,9 @@ Intro about why we want a controller instead of directly
 
 ### How does the L293D work?
 
-First let's look at the pins... 
+** The top of the controller is signified by a small notch. ** 
 
-**TODO** how to find the top
+First let's look at the pins... 
 
 ![L293D](https://components101.com/sites/default/files/component_pin/L293D-Pinout.png)
   
