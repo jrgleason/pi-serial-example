@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "robot.h"
 
-int forward(){
+napi_value forward(napi_env env, napi_callback_info args){
     gpioWrite(ENABLE_1_2, 1);
     gpioWrite(ENABLE_3_4, 1);
     gpioWrite(OUTPUT_1_GPIO, 1);
