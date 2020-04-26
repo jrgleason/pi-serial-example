@@ -17,7 +17,7 @@ napi_value init(napi_env env, napi_value exports) {
   status = napi_create_function(env, NULL, 0, forward, NULL, &fn);
   if (status != napi_ok) return NULL;
   // 'Export' the 'down' function.
-  status = napi_create_function(env, NULL, 0, down, NULL, &fn);
+  status = napi_create_function(env, NULL, 0, backward, NULL, &fn);
   if (status != napi_ok) return NULL;
   return exports;
 }
