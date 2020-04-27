@@ -43,12 +43,32 @@ napi_value node_stop(napi_env env, napi_callback_info info){
     if (status != napi_ok) return NULL;
     return result;
 }
-napi_value helloWorld(napi_env env, napi_callback_info info) {
-  napi_value world;
-  napi_status status;
-  const char* str = "world";
-  size_t str_len = strlen(str);
-  status = napi_create_string_utf8(env, str, str_len, &world);
-  if (status != napi_ok) return NULL;
-  return world;
+napi_value node_turnOffLight(napi_env env, napi_callback_info info){
+    napi_value result;
+    napi_status status;
+    int answer = turnOffLight();
+    status = napi_create_int64(env, answer, &result);
+    if (status != napi_ok) return NULL;
+    return result;
+}
+napi_value node_turnOnLight(napi_env env, napi_callback_info info) {
+    size_t argc = 3;
+    napi_value args[3];
+    napi_status status;
+    status = napi_get_cb_info(env, info, &argc, args, NULL, NULL);
+    if (status != napi_ok) return NULL;
+    int red;
+    status = napi_get_value_int64(env, args[0], &red);
+    if (status != napi_ok) return NULL;
+    int green;
+    status = napi_get_value_int64(env, args[1], &green);
+    if (status != napi_ok) return NULL;
+    int blue;
+    status = napi_get_value_int64(env, args[2], &blue);
+    if (status != napi_ok) return NULL;
+    int result = turnOnLight(red, green, blue);
+    napi_value wrappedResult;
+    status = napi_create_int64(env, result, &wrappedResult);
+    if (status != napi_ok) return NULL;
+    return wrappedResult;
 }

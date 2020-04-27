@@ -21,4 +21,6 @@ int left();
 int right();
 int stop();
 int initialize();
+int turnOffLight();
+int turnOnLight(int red, int green, int blue);
 #endif

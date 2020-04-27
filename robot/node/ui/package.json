@@ -15,6 +15,7 @@
     "@jrg/ubuntu-ui": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
+    "acorn": "latest",
     "bindings": "latest",
     "koa": "latest",
     "koa-body": "latest",
@@ -22,7 +23,7 @@
     "koa-pug": "latest",
     "koa-router": "latest",
     "koa-static": "latest",
-    "acorn": "latest",
+    "node-addon-api": "^2.0.0",
     "rpio": "latest"
   },
   "devDependencies": {

@@ -66,3 +66,14 @@ int stop(){
     gpioWrite(OUTPUT_4_GPIO, 0);
     return 0;
 }
+int turnOnLight(int red, int green, int blue){
+    printf("Red: %d Green: %d Blue: %d", red, green, blue);
+    gpioWrite(RED_LED_1, red);
+    gpioWrite(GREEN_LED_1, green);
+    gpioWrite(BLUE_LED_1, blue);
+}
+int turnOffLight(){
+    gpioWrite(RED_LED_1, 0);
+    gpioWrite(GREEN_LED_1, 0);
+    gpioWrite(BLUE_LED_1, 0);
+}
