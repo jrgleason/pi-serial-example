@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@jrg/koa-sass": "latest",
-    "@jrg/ubuntu-ui": "latest",
+    "@jrg-material/material": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
     "acorn": "latest",
