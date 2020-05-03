@@ -13,6 +13,7 @@
   "dependencies": {
     "@jrg/koa-sass": "latest",
     "@jrg-material/material": "latest",
+    "@jrg-material/core": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
     "acorn": "latest",
