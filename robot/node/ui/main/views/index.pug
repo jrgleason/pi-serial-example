@@ -42,6 +42,12 @@ html
                             .mdc-button__ripple
                             span.mdc-button__label right
                     .bottom &nbsp;
+            .content(slot="jrg-view-item")
+                .left-side
+                    jrg-led-controller
+                .middle-column
+                .right-side
+                    jrg-led-controller
 
 
         script(type="module" src='/jrg/ubuntu-ui/dist/index.umd.js')

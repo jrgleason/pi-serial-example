@@ -23,7 +23,7 @@
     "koa-pug": "latest",
     "koa-router": "latest",
     "koa-static": "latest",
-    "node-addon-api": "^2.0.0",
+    "node-addon-api": "latest",
     "rpio": "latest"
   },
   "devDependencies": {
