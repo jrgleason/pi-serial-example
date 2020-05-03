@@ -45,6 +45,14 @@ app.use(mount('/', main.app))
        )
      )
    )
+   .use(
+      mount(
+        '/jrg-material',
+        serve(
+          `${__dirname}/node_modules/@jrg-material`, staticOptions
+        )
+      )
+   )
    .use(mount('/material', serve(`${__dirname}/node_modules/@material`)))
    .listen(3001, ()=>{
      console.log(`The server is running`);

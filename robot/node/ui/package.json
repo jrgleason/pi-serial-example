@@ -27,6 +27,7 @@
     "rpio": "latest"
   },
   "devDependencies": {
+    "core-js": "latest",
     "cmake-js": "latest",
     "node-gyp": "latest",
     "eslint": "latest",
