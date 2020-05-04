@@ -1,7 +1,5 @@
 html
     head
-
-        // link(href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet")
         script(src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js")
         link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet")
@@ -48,6 +46,7 @@ html
                 .middle-column
                 .right-side
                     jrg-led-controller
+        script(type="module" src="https://unpkg.com/@material/mwc-slider@v0.13.0/mwc-slider.js")
         script(type="module" src='/jrg-material/core/dist/index.umd.js')
         script(type="module" src='/jrg-material/material/dist/index.umd.js')
         script(type="module" src="/js/global.mjs")
