@@ -26,12 +26,13 @@ function goForward(time){
 }
 
 (()=>{
+    let lastState = rpio.HIGH;
     rpio.poll(SENSOR, (state)=>{
-        console.log(`The state is ${state != rpio.HIGH}`);
+        if(state != lastState){
+            console.log(`The state is ${state}`);
+            lastState = state;
+        }
     });
-//     const int = setInterval(()=>{
-//         console.log(`The sensor is ${rpio.read(SENSOR)}`)
-//     }, 1000);
     goForward(2);
     blinkBlue(3);
     setTimeout(()=>{
