@@ -28,18 +28,19 @@ function goForward(time){
 (()=>{
     let lastState = rpio.HIGH;
     rpio.poll(SENSOR, (state)=>{
-        if(state === rpio.LOW){
-            console.log("Something found stopping");
-            rpio.close(FORWARD_LEFT);
-            rpio.close(FORWARD_RIGHT);
-        }
+       // if(state == rpio.LOW){
+           console.log("Something found stopping "+state);
+       // }
     });
-    goForward(50);
-    blinkBlue(3);
+    // goForward(50);
+    // blinkBlue(3);
+    rpio.open(BLUE_LED, rpio.OUTPUT, rpio.LOW);
+    rpio.write(BLUE_LED, rpio.HIGH);
     setTimeout(()=>{
-        console.log("Closing sensor");
-        rpio.close(SENSOR);
-    }, 50000)
+      rpio.close(BLUE_LED);
+      console.log("Closing sensor");
+      rpio.close(SENSOR);
+    }, 5000)
 })();
 
 
