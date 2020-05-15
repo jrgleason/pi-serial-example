@@ -22,11 +22,13 @@ function goForward(time){
     rpio.open(FORWARD_RIGHT, rpio.OUTPUT, rpio.HIGH);
     rpio.sleep(time);
     rpio.close(FORWARD_LEFT);
-    rpio.close(FORWARD_LEFT);
+    rpio.close(FORWARD_RIGHT);
 }
 
 (()=>{
-    rpio.open(SENSOR, rpio.PWM);
+    rpio.poll(SENSOR, (state)=>{
+        console.log(`The sensor is ${state}`);
+    });
     const int = setInterval(()=>{
         console.log(`The sensor is ${rpio.read(SENSOR)}`)
     }, 1000);
