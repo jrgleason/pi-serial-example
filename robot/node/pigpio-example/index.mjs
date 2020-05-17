@@ -1,4 +1,6 @@
-import { Gpio } from 'pigpio';
+import pigpio from 'pigpio';
+
+const { Gpio } = pigpio;
 
 const BASIC_CONFIG = {
     mode: Gpio.OUTPUT
@@ -44,7 +46,7 @@ class DualMotor{
     constructor(l293d){
         this.left = new Motor(l293d.leftForwardPin, l293d.leftBackwardPin);
         this.right = new Motor(l293d.rightForwardPin, l293d.rightBackwardPin);
-        this.motors = [left, right];
+        this.motors = [this.left, this.right];
     }
     allForward(){
         this.motors.map((motor)=>motor.goForward());
@@ -78,7 +80,7 @@ class Motor {
 
 const blueLed = new Led();
 const motors = new DualMotor(new L293D());
-const i = 0;
+let i = 0;
 
 const interval = setInterval(()=>{
     if(i > 10){
