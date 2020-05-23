@@ -30,10 +30,6 @@ int forward(){
     return(0);
 }
 
-int readTemperature(){
-
-}
-
 int backward(){
     gpioWrite(ENABLE_1_2, 1);
     gpioWrite(ENABLE_3_4, 1);
