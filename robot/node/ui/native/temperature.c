@@ -1,3 +1,5 @@
+#include <pigpio.h>
+#include <stdint.h>
 #include "temperature.h"
 // http://www.uugear.com/portfolio/read-dht1122-temperature-humidity-sensor-from-raspberry-pi/
 int data[5] = { 0, 0, 0, 0, 0 };
@@ -10,7 +12,7 @@ int readTemperature(){
 
     gpioSetMode( OUTPUT_PIN, PI_OUTPUT);
     gpioWrite( OUTPUT_PIN, 0 );
-    delay( 18 )
+    delay( 18 );
     pinMode( OUTPUT_PIN, PI_INPUT );
     for ( i = 0; i < MAX_TIMINGS; i++ ) {
 		counter = 0;
