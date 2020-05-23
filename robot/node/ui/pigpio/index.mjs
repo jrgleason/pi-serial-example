@@ -1,5 +1,5 @@
 import { SubRoute } from '../util/SubRoute.mjs';
-import { Led } from './Led';
+import { Led } from './Led.mjs';
 
 export class Robot extends SubRoute {
     constructor() {
