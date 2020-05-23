@@ -4,7 +4,7 @@
 // http://www.uugear.com/portfolio/read-dht1122-temperature-humidity-sensor-from-raspberry-pi/
 int data[5] = { 0, 0, 0, 0, 0 };
 int readTemperature(){
-    uint8_t laststate	= HIGH;
+    uint8_t laststate	= PI_HIGH;
     uint8_t counter		= 0;
     uint8_t j			= 0, i;
 

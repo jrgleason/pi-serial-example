@@ -2,7 +2,7 @@
 #define _TEMP
 // This can be any standard IO pins
 // DHT11 <- sensor
-#define MAX_TIMINGS	85
-#define OUTPUT_PIN = 26
+static const int MAX_TIMINGS = 85;
+static const int OUTPUT_PIN = 26;
 int readTemperature();
 #endif
