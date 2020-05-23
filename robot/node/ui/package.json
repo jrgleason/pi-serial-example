@@ -25,6 +25,7 @@
     "koa-router": "latest",
     "koa-static": "latest",
     "node-addon-api": "latest",
+    "pigpio": "latest",
     "rpio": "latest"
   },
   "devDependencies": {

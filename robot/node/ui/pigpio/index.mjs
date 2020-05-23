@@ -29,7 +29,7 @@ export class Robot extends SubRoute {
     constructor() {
         super();
         this.setRoute('get', '/light/on', this.onLightOnGet.bind(this));
-        this.setRoute('get', '/light/off', this.offLightOnGet.bind(this));
+        this.setRoute('get', '/light/off', this.onLightOffGet.bind(this));
         this.led = new Led();
     }
     async onLightOnGet(ctx){
