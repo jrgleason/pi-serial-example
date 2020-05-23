@@ -99,7 +99,7 @@ const ledInt = setInterval(()=>{
 
 
 const motors = new DualMotor(new L293D());
-const i = 0;
+let i = 0;
 
 const interval = setInterval(()=>{
     if(i > 10){
