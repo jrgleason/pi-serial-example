@@ -1,3 +1,4 @@
+#include "temperature.h"
 // http://www.uugear.com/portfolio/read-dht1122-temperature-humidity-sensor-from-raspberry-pi/
 int data[5] = { 0, 0, 0, 0, 0 };
 int readTemperature(){

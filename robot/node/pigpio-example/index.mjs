@@ -1,11 +1,10 @@
-import { Gpio } from 'pigpio';
-
+import pigpio from 'pigpio';
+const { Gpio } = pigpio;
 const BASIC_CONFIG = {
     mode: Gpio.OUTPUT
 }
 const HIGH = 1;
 const LOW = 0;
-
 class Led {
     constructor(num = 24){
         this.num = num;
@@ -44,7 +43,7 @@ class DualMotor{
     constructor(l293d){
         this.left = new Motor(l293d.leftForwardPin, l293d.leftBackwardPin);
         this.right = new Motor(l293d.rightForwardPin, l293d.rightBackwardPin);
-        this.motors = [left, right];
+        this.motors = [this.left, this.right];
     }
     allForward(){
         this.motors.map((motor)=>motor.goForward());
@@ -58,25 +57,47 @@ class DualMotor{
 }
 
 class Motor {
-    constructor(forwardPin, backwardPin){
+    constructor(forwardPin, backwardPin, enabled){
         this.forward = new Gpio(forwardPin, BASIC_CONFIG);
         this.backward = new Gpio(backwardPin, BASIC_CONFIG);
+        if(enabled){
+            this.enabled = new Gpio(enabled, BASIC_CONFIG);
+        }
+    }
+    enable(){
+        if(this.enabled) this.enabled.digitalWrite(HIGH);
+    }
+    disable(){
+        if(this.enabled) this.enabled.digitalWrite(LOW);
     }
     goForward(){
+        this.enable();
         this.forward.digitalWrite(HIGH);
         this.backward.digitalWrite(LOW);
     }
     goBackward(){
+        this.enable();
         this.forward.digitalWrite(LOW);
         this.backward.digitalWrite(HIGH);
     }
     allStop(){
         this.forward.digitalWrite(LOW);
         this.backward.digitalWrite(LOW);
+        this.disable();
     }
 }
 
 const blueLed = new Led();
+const ledInt = setInterval(()=>{
+    if(i > 10){
+        clearInterval(ledInt);
+    } else{
+        blueLed.blink();
+        i += 1;
+    }
+}, 2000);
+
+
 const motors = new DualMotor(new L293D());
 const i = 0;
 
@@ -85,7 +106,6 @@ const interval = setInterval(()=>{
         motors.allStop();
         clearInterval(interval);
     } else{
-        blueLed.blink();
         if((i % 2) == 0){
             motors.allForward();
         } else{
