@@ -1,0 +1,38 @@
+{
+  "name": "@jrg-robot/native",
+  "version": "0.0.1",
+  "description": "Simple UI for the robot",
+  "main": "server.mjs",
+  "author": "Jackie Gleason",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules --napi-modules server.mjs",
+    "install": "cmake-js --log-level verbose compile",
+    "lint": "eslint src --fix --ext mjs"
+  },
+  "dependencies": {
+    "@jrg/koa-sass": "latest",
+    "@jrg-material/material": "latest",
+    "@jrg-material/core": "latest",
+    "@material/mwc-button": "latest",
+    "@material/mwc-top-app-bar": "latest",
+    "acorn": "latest",
+    "bindings": "latest",
+    "koa": "latest",
+    "koa-body": "latest",
+    "koa-mount": "latest",
+    "koa-pug": "latest",
+    "koa-router": "latest",
+    "koa-static": "latest",
+    "node-addon-api": "latest",
+    "pigpio": "latest",
+    "rpio": "latest"
+  },
+  "devDependencies": {
+    "core-js": "latest",
+    "cmake-js": "latest",
+    "node-gyp": "latest",
+    "eslint": "latest",
+    "eslint-config-google": "latest"
+  }
+}
