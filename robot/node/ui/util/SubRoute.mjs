@@ -1,5 +1,5 @@
 import Koa from 'koa';
-import Router from 'koa-router';
+import Router from 't';
 import koaBody from 'koa-body';
 export class SubRoute {
   constructor() {

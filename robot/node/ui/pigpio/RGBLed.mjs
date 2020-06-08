@@ -12,6 +12,10 @@ export class RGBLed{
         this[color] = value;
     }
     setColor(name){
-
+        const color = rgba(name);
+        console.log(`The color is ${JSON.stringify(color)}`)
+        this.red.setPwm(color[0]);
+        this.green.setPwm(color[1]);
+        this.blue.setPwm(color[2]);
     }
 }

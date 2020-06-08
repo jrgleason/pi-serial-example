@@ -7,17 +7,17 @@
   "license": "MIT",
   "scripts": {
     "start": "node --experimental-modules --napi-modules server.mjs",
-    "install": "cmake-js --log-level verbose compile",
     "lint": "eslint src --fix --ext mjs"
   },
   "dependencies": {
-    "@jrg/koa-sass": "latest",
-    "@jrg-material/material": "latest",
     "@jrg-material/core": "latest",
+    "@jrg-material/material": "latest",
+    "@jrg/koa-sass": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
     "acorn": "latest",
     "bindings": "latest",
+    "color-rgba": "^2.1.1",
     "koa": "latest",
     "koa-body": "latest",
     "koa-mount": "latest",
@@ -30,8 +30,6 @@
   },
   "devDependencies": {
     "core-js": "latest",
-    "cmake-js": "latest",
-    "node-gyp": "latest",
     "eslint": "latest",
     "eslint-config-google": "latest"
   }

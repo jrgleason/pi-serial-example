@@ -14,6 +14,11 @@ export class Led {
     setValue(value){
         this.gpio.digitalWrite(value);
     }
+
+    setPwm(dutyCycle){
+        this.gpio.pwmWrite(dutyCycle);
+    }
+
     blink(delay=1000){
         this.turnOn();
         setTimeout(this.turnOff.bind(this), delay);
