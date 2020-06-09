@@ -21,7 +21,7 @@ export class Robot extends SubRoute {
                     break;
                 case 'backward':
                     this.motors.allBackward();
-                default
+                default:
                     ctx.status(400);
             }
         });

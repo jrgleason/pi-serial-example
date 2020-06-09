@@ -1,5 +1,4 @@
-
-mpaimport path from 'path';
+import path from 'path';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
