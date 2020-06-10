@@ -17,9 +17,11 @@ export class Robot extends SubRoute {
             console.log(`Going ${ctx.params.direction}`);
             switch(ctx.params.direction.toLowerCase()){
                 case 'forward':
+                    console.log('Going Forward');
                     this.motors.allForward();
                     break;
                 case 'backward':
+                    console.log('Going Backward');
                     this.motors.allBackward();
                 default:
                     ctx.status(400);
