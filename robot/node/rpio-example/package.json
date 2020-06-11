@@ -1,0 +1,20 @@
+{
+  "name": "@jrg-robot/rpio",
+  "version": "0.0.1",
+  "description": "Example application using the RPIO library instead of the native one",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs"
+  },
+  "keywords": [
+    "rpio",
+    "gpio",
+    "node",
+    "raspberrypi"
+  ],
+  "author": "Jackie Gleason",
+  "license": "MIT",
+  "dependencies": {
+    "rpio": "latest"
+  }
+}

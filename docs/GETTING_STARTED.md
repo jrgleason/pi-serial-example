@@ -119,7 +119,7 @@ Intro about why we want a controller instead of directly
 
 First let's look at the pins... 
 
-![L293D](https://components101.com/sites/default/files/component_pin/L293D-Pinout.png)
+![1](https://components101.com/sites/default/files/component_pin/L293D-Pinout.png)
   
   * ### Left Side       
     * **Enable 1,2**: Turns on the motor that is wired into input 1 and 2.

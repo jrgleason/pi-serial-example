@@ -15,12 +15,12 @@ export class Movement extends SubRoute {
     this.setRoute('get', '/right', this.onRightGet.bind(this));
     this.setRoute('get', '/left', this.onLeftGet.bind(this));
     this.setRoute('get', '/stop', this.onStopGet.bind(this));
-    bindings.turnOnLight(1, 0, 0);
+    // bindings.turnOnLight(1, 0, 0);
   }
   async onForwardGet(ctx) {
     try{
         bindings.forward();
-        bindings.turnOnLight(0, 1, 0);
+        // bindings.turnOnLight(0, 1, 0);
         ctx.body="moving forward";
     } catch(err){
         ctx.body = `There was an internal service error ${err}`;
@@ -30,7 +30,7 @@ export class Movement extends SubRoute {
   async onBackwardGet(ctx) {
     try{
         bindings.backward();
-        bindings.turnOnLight(0, 0, 1);
+        // bindings.turnOnLight(0, 0, 1);
         ctx.body="moving backward";
     } catch(err){
         ctx.body = `There was an internal service error ${err}`;

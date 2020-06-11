@@ -1,5 +1,5 @@
 {
-  "name": "@jrg-robot/ui",
+  "name": "@jrg-robot/native",
   "version": "0.0.1",
   "description": "Simple UI for the robot",
   "main": "server.mjs",
@@ -7,17 +7,17 @@
   "license": "MIT",
   "scripts": {
     "start": "node --experimental-modules --napi-modules server.mjs",
+    "install": "cmake-js --log-level verbose compile",
     "lint": "eslint src --fix --ext mjs"
   },
   "dependencies": {
-    "@jrg-material/core": "latest",
-    "@jrg-material/material": "latest",
     "@jrg/koa-sass": "latest",
+    "@jrg-material/material": "latest",
+    "@jrg-material/core": "latest",
     "@material/mwc-button": "latest",
     "@material/mwc-top-app-bar": "latest",
     "acorn": "latest",
     "bindings": "latest",
-    "color-rgba": "^2.1.1",
     "koa": "latest",
     "koa-body": "latest",
     "koa-mount": "latest",
@@ -25,12 +25,13 @@
     "koa-router": "latest",
     "koa-static": "latest",
     "node-addon-api": "latest",
-    "path-to-regexp": "^6.1.0",
     "pigpio": "latest",
     "rpio": "latest"
   },
   "devDependencies": {
     "core-js": "latest",
+    "cmake-js": "latest",
+    "node-gyp": "latest",
     "eslint": "latest",
     "eslint-config-google": "latest"
   }

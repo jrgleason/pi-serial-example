@@ -5,7 +5,7 @@ forward.addEventListener("click", () => {
     }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/movement/forward");
+    oReq.open("GET", "/robot/motor/forward");
     oReq.send();
 });
 const backward = document.getElementById("backward");
@@ -15,7 +15,7 @@ backward.addEventListener("click", () => {
     }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/movement/backward");
+    oReq.open("GET", "/robot/motor/backward");
     oReq.send();
 });
 const left = document.getElementById("left");
@@ -25,7 +25,7 @@ left.addEventListener("click", () => {
     }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/movement/left");
+    oReq.open("GET", "/robot/motor/left");
     oReq.send();
 });
 const right = document.getElementById("right");
@@ -35,7 +35,7 @@ right.addEventListener("click", () => {
     }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/movement/right");
+    oReq.open("GET", "/robot/motor/right");
     oReq.send();
 });
 
@@ -46,6 +46,15 @@ stop.addEventListener("click", () => {
     }
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/movement/stop");
+    oReq.open("GET", "/robot/motor/stop");
     oReq.send();
+});
+
+Array.from(document.querySelectorAll('mwc-slider')).forEach(function(e) {
+  e.addEventListener('input', function(e) {
+    console.log(JSON.stringify(e));
+  });
+  e.addEventListener('change', function(e) {
+    console.log(JSON.stringify(e));
+  });
 });

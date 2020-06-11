@@ -5,13 +5,13 @@ import {KoaSass} from '@jrg/koa-sass';
 
 import {__dirname} from './unclean.mjs';
 import {Main} from './main/index.mjs';
-// import {Movement} from './movement/index.mjs';
+import {Movement} from './movement/index.mjs';
 import {Robot} from './pigpio/index.mjs'
 
 
 
 const main = new Main();
-// const movement = new Movement();
+const movement = new Movement();
 const robot = new Robot();
 
 const app = new Koa();
@@ -36,7 +36,7 @@ const staticOptions = {
     setHeaders: setStaticHeaders
 }
 app.use(mount('/', main.app))
-//    .use(mount('/movement', movement.app))
+   .use(mount('/movement', movement.app))
    .use(mount('/robot', robot.app))
    .use(mount('/styles', stylesApp))
    .use(mount('/js', serve(`${__dirname}/global/scripts`, staticOptions)))
