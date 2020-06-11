@@ -32,6 +32,9 @@ class DualMotor{
     allStop(){
         this.motors.map((motor)=>motor.allStop());
     }
+    goForward(dutyCycle=255){
+
+    }
 }
 
 class Motor {
@@ -48,15 +51,29 @@ class Motor {
     disable(){
         if(this.enabled) this.enabled.digitalWrite(LOW);
     }
-    goForward(){
+    goForward(dutyCycle){
         this.enable();
-        this.forward.digitalWrite(HIGH);
-        this.backward.digitalWrite(LOW);
+        if(dutyCycle){
+            this.forward.pwmWrite(dutyCycle);
+            this.backward.digitalWrite(LOW);
+        }
+        else{
+            this.forward.digitalWrite(HIGH);
+            this.backward.digitalWrite(LOW);
+        }
+
     }
-    goBackward(){
+    goBackward(dutyCycle){
         this.enable();
-        this.forward.digitalWrite(LOW);
-        this.backward.digitalWrite(HIGH);
+        if(dutyCycle){
+            this.forward.pwmWrite(LOW);
+            this.backward.digitalWrite(dutyCycle);
+        }
+        else{
+            this.forward.digitalWrite(LOW);
+            this.backward.digitalWrite(HIGH);
+        }
+
     }
     allStop(){
         this.forward.digitalWrite(LOW);

@@ -13,16 +13,16 @@ export class Robot extends SubRoute {
         this.setRoute('get', '/light/green', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/blue', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/color', this.led.turnOff.bind(this.led));
-        this.setRoute('get', '/motor/:direction', (ctx)=>{
+        this.setRoute('get', '/motor/:direction/:dutyCycle', (ctx)=>{
             console.log(`Going ${ctx.params.direction}`);
             switch(ctx.params.direction.toLowerCase()){
                 case 'forward':
                     console.log('Going Forward');
-                    this.motors.allForward();
+                    this.motors.allForward(ctx.params.dutyCycle);
                     break;
                 case 'backward':
                     console.log('Going Backward');
-                    this.motors.allBackward();
+                    this.motors.allBackward(ctx.params.dutyCycle);
                     break;
                 case 'stop':
                     this.motors.allStop();
