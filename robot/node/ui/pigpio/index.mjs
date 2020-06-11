@@ -23,6 +23,10 @@ export class Robot extends SubRoute {
                 case 'backward':
                     console.log('Going Backward');
                     this.motors.allBackward();
+                    break;
+                case 'stop':
+                    thi.motors.allStop();
+                    break;
                 default:
                     ctx.status(400);
             }
