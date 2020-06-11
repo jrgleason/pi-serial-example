@@ -2,7 +2,9 @@ import { SubRoute } from '../util/SubRoute.mjs';
 import { Led } from './Led.mjs';
 import { RGBLed } from './RGBLed.mjs';
 import { DualMotor, L293D } from './Motors.mjs'
-import { pathToRegexp, match, parse, compile } from "path-to-regexp";
+import PR from "path-to-regexp";
+
+const { pathToRegexp, match, parse, compile } = PR;
 
 export class Robot extends SubRoute {
     constructor() {
