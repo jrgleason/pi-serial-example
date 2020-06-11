@@ -2,9 +2,6 @@ import { SubRoute } from '../util/SubRoute.mjs';
 import { Led } from './Led.mjs';
 import { RGBLed } from './RGBLed.mjs';
 import { DualMotor, L293D } from './Motors.mjs'
-import PR from "path-to-regexp";
-
-const { pathToRegexp, match, parse, compile } = PR;
 
 export class Robot extends SubRoute {
     constructor() {
@@ -17,7 +14,7 @@ export class Robot extends SubRoute {
         this.setRoute('get', '/light/green', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/blue', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/color', this.led.turnOff.bind(this.led));
-        this.setRoute('get', pathToRegexp('/motor/:direction/:dutyCycle?'), (ctx)=>{
+        this.setRoute('get', '/motor/:direction/:dutyCycle?', (ctx)=>{
             console.log(`Going ${ctx.params.direction}`);
             switch(ctx.params.direction.toLowerCase()){
                 case 'forward':
