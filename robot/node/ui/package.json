@@ -25,6 +25,7 @@
     "koa-router": "latest",
     "koa-static": "latest",
     "node-addon-api": "latest",
+    "path-to-regexp": "^6.1.0",
     "pigpio": "latest",
     "rpio": "latest"
   },
