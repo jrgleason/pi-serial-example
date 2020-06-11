@@ -18,4 +18,9 @@ export class RGBLed{
         this.green.setPwm(color[1]);
         this.blue.setPwm(color[2]);
     }
+    turnOff(){
+        this.red.turnOff();
+        this.green.turnOff();
+        this.blue.turnOff();
+    }
 }
