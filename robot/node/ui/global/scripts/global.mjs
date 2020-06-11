@@ -49,3 +49,12 @@ stop.addEventListener("click", () => {
     oReq.open("GET", "/robot/motor/stop");
     oReq.send();
 });
+
+Array.from(document.querySelectorAll('mwc-slider')).forEach(function(e) {
+  e.addEventListener('input', function(e) {
+    console.log(JSON.stringify(e));
+  });
+  e.addEventListener('change', function(e) {
+    console.log(JSON.stringify(e));
+  });
+});
