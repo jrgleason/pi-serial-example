@@ -10,7 +10,7 @@ export class Robot extends SubRoute {
         this.rgb = new RGBLed();
         this.motors = new DualMotor(new L293D());
         this.setRoute('get', '/light/color/:color', (ctx)=> this.rgb.setColor(ctx.params.color));
-        this.setRoute('get','/light/off', this.rgb.turnOff);
+        this.setRoute('get','/light/off', this.rgb.turnOff.bind(this.rgb));
         this.setRoute('get', '/light/green', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/blue', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/color', this.led.turnOff.bind(this.led));
