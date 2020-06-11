@@ -28,6 +28,12 @@ export class Robot extends SubRoute {
                 case 'stop':
                     this.motors.allStop();
                     break;
+                case 'left':
+                    this.motors.goLeft();
+                    break;
+                case 'right':
+                    this.motors.goRight();
+                    break;
                 default:
                     ctx.status(400);
             }

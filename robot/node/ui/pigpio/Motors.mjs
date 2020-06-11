@@ -23,17 +23,22 @@ class DualMotor{
         this.right = new Motor(l293d.rightForwardPin, l293d.rightBackwardPin);
         this.motors = [this.left, this.right];
     }
-    allForward(){
-        this.motors.map((motor)=>motor.goForward());
+    allForward(dutyCycle){
+        this.motors.map((motor)=>motor.goForward(dutyCycle));
     }
-    allBackward(){
-        this.motors.map((motor)=>motor.goBackward());
+    goLeft(config){
+        this.left.goBackward();
+        this.right.goForward();
+    }
+    goRight(config){
+        this.right.goBackward();
+        this.left.goForward();
+    }
+    allBackward(dutyCycle){
+        this.motors.map((motor)=>motor.goBackward(dutyCycle));
     }
     allStop(){
         this.motors.map((motor)=>motor.allStop());
-    }
-    goForward(dutyCycle=255){
-
     }
 }
 
