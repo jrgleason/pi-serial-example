@@ -25,7 +25,7 @@ export class Robot extends SubRoute {
                     this.motors.allBackward();
                     break;
                 case 'stop':
-                    thi.motors.allStop();
+                    this.motors.allStop();
                     break;
                 default:
                     ctx.status(400);
