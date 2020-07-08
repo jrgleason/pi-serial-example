@@ -2,6 +2,7 @@ import { SubRoute } from '../util/SubRoute.mjs';
 import { Led } from './Led.mjs';
 import { RGBLed } from './RGBLed.mjs';
 import { DualMotor, L293D } from './Motors.mjs'
+import {SimpleSensor} from './ObjectSensor.mjs'
 
 export class Robot extends SubRoute {
     constructor() {
@@ -9,7 +10,11 @@ export class Robot extends SubRoute {
         this.led = new Led();
         this.rgb = new RGBLed();
         this.motors = new DualMotor(new L293D());
-        this.setRoute('get', '/light/color/:color', (ctx)=> this.rgb.setColor(ctx.params.color));
+//         this.sensor = new SimpleSensor(this.led, this.motors);
+        this.setRoute('get', '/light/color/:color', (ctx)=> {
+            this.rgb.setColor(ctx.params.color);
+            ctx.body = "";
+        });
         this.setRoute('get','/light/off', this.rgb.turnOff.bind(this.rgb));
         this.setRoute('get', '/light/green', this.led.turnOff.bind(this.led));
         this.setRoute('get', '/light/blue', this.led.turnOff.bind(this.led));
@@ -37,6 +42,7 @@ export class Robot extends SubRoute {
                 default:
                     ctx.status(400);
             }
+            ctx.body = "";
         });
     }
 }

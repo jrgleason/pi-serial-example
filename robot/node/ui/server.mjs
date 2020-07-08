@@ -6,7 +6,7 @@ import {KoaSass} from '@jrg/koa-sass';
 import {__dirname} from './unclean.mjs';
 import {Main} from './main/index.mjs';
 // import {Movement} from './movement/index.mjs';
-import {Robot} from './pigpio/index.mjs'
+import {Robot} from './pigpio/index.mjs';
 
 
 
